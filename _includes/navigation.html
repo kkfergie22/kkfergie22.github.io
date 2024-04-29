@@ -4,11 +4,15 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHiddenContent"><span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-collapse collapse" id="navbarHiddenContent">
-      {% for item in site.data.navigation %}
-      <a href="{{ item.link }}" {% if page.url==item.link %}class="active" {% endif %}>
-        {{ item.name }}
-      </a>
-      {% endfor %}
+      <ul class="navbar-nav">
+        {% for item in site.data.navigation %}
+        <li class="nav-item">
+          <a href="{{ item.link }}" {% if page.url==item.link %}class="active" aria-current="page" {% endif %} class="nav-link">
+            {{ item.name }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
 
   </div>
